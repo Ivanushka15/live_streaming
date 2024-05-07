@@ -45,17 +45,25 @@
       flex-grow: 1;
       
       .list {
-        @include m.d-flex(start, center, nowrap, row, 95px, 0);
-        padding: 0 0 0 108px;
+        @include m.d-flex(start, center, nowrap, row, min(100px, 5vw), 0); //выбирает минимальный: либо 100px, либо 5vw
+        padding: 0 0 0 min(100px, 5vw);
 
         &__item {
           &-link {
             font-weight: 400;
             font-size: 22px;
-            line-height: 136%;
+            // line-height: 136%;
             color: v.$color_white;
             @extend %hover-black;
           }
+        }
+      }
+
+      @media(max-width: v.$media_lg) {
+        .list {
+          // white-space: now;
+          padding: 0 0 0 0;
+          @include m.d-flex(center, center, nowrap, row, min(100px, 5vw), 0);
         }
       }
     }
