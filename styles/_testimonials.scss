@@ -13,7 +13,7 @@
 }
 
 .testimonials {
-  padding: 190px 0 100px 0;
+  padding: 190px 0 10px 0;
   margin: 0 auto;
   @include m.d-flex(start, center, nowrap, column, 0, 90px);
 
@@ -110,13 +110,13 @@
   }
 
   @media(max-width: v.$media_xl) {
-    padding: 140px 0 100px 0;
+    padding: 140px 0 10px 0;
   }
   @media(max-width: v.$media_lg) {
-    padding: 100px 0;
+    padding: 100px 0 10px 0;
   }
   @media(max-width: v.$media_md) {
     @include m.d-flex(start, center, nowrap, column, 0, 65px);
-    padding: 70px 0 100px 0;
+    padding: 70px 0 10px 0;
   }
 }

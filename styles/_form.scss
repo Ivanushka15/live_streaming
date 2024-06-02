@@ -1,0 +1,122 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+@use 'sass:color';
+
+%coloud-template {
+  width: 700px;
+  height: 240px;
+  background: url(../assets/img/cloud_alpha.png) center/contain no-repeat;
+}
+
+.form-section {
+  padding: 315px 15px 140px;
+  position: relative;
+  overflow: hidden;
+
+  &__bg-cloud {
+    @extend %coloud-template;
+
+    // @media(max-width: v.$media_lg) {
+    //   background: url(../assets/img/cloud_alpha.png) center/ 288px 103px  no-repeat;
+    // }
+  }
+
+  .cloud--left {
+    @include m.position(absolute, 2, -1, top, left, 180px, -370px);
+
+    @media(max-width: v.$media_xl) {
+      @include m.position(absolute, 1, -1, top, left, 130px, -450px);
+    }
+    @media(max-width: v.$media_lg) {
+      @include m.position(absolute, 1, -1, top, left, 0px, -400px);
+      background: url(../assets/img/cloud_alpha.png) center/ 440px 158px  no-repeat;
+    }
+    @media(max-width: v.$media_md) {
+      @include m.position(absolute, 1, -1, top, left, -80px, -400px);
+    }
+  }
+
+
+  .cloud--right {
+    @include m.position(absolute, 1, -1, bottom, right, 0, -410px);
+
+    @media(max-width: v.$media_xl) {
+      @include m.position(absolute, 1, -1, bottom, right, -0px, -470px);
+    }
+    @media(max-width: v.$media_lg) {
+      @include m.position(absolute, 1, -1, bottom, right, -50px, -370px);
+      background: url(../assets/img/cloud_alpha.png) center/ 288px 103px  no-repeat;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 360px;
+    margin: 0 auto;
+    @include m.d-flex(center, center, nowrap, row, 0, 0);
+  }
+
+  @media(max-width: v.$media_xl) {
+    padding: 270px 15px 140px;
+  }
+  @media(max-width: v.$media_lg) {
+    padding: 220px 15px 140px;
+  }
+  @media(max-width: v.$media_md) {
+    padding: 140px 15px 140px;
+  }
+}
+
+.form {
+  @include m.d-flex(start, center, nowrap, column, 0, 23px);
+  // width: 100%;
+  // max-width: 625px;
+  width: min(625px, 100%);
+
+  &__title {
+    text-align: center;
+    @include m.font(36px, 400, v.$color_black)
+  }
+  &__name,
+  &__email,
+  &__text {
+    width: 100%;
+    background-color: v.$color_white;
+    border: 1px solid v.$color_gray;
+    border-radius: 20px;
+    height: 47px;
+    padding: 0 1.5em;
+    @include m.font(25px, 400, v.$color_black);
+
+    &::placeholder { //псевдоэлемент для стилизации placeholder
+      @include m.font(25px, 100, v.$color_gray); 
+    }
+  }
+  
+  &__submit-btn {
+    width: 100%;
+    height: 47px;
+    border-radius: 20px;
+    border: none;
+    background-color: v.$color_black;
+    @include m.font(25px, 500, v.$color_white);
+    cursor: pointer;
+    &:hover {
+      background-color: color.adjust(v.$color_black, $alpha: -0.33); 
+    }
+  }
+  @media(max-width: v.$media_md) {
+    &__title {
+      @include m.font(32px, 400, v.$color_black)
+    }
+    &__name,
+    &__email,
+    &__text {
+      @include m.font(18px, 400, v.$color_black);
+      &::placeholder {
+        @include m.font(18px, 100, v.$color_gray); 
+      }
+    }
+  }
+}

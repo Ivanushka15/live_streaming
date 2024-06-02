@@ -40,7 +40,7 @@
       @include m.position(absolute, 1, -1, bottom, right, 15px, -30px);
       
       &:hover {
-        background-color: color.adjust(v.$color_black, $alpha: -0.33); 
+        background-color: color.adjust(v.$color_black, $alpha: -0.2); 
       }
       &:focuse {
         outline: none;
