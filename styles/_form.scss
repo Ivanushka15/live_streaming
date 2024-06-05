@@ -102,6 +102,7 @@
     background-color: v.$color_black;
     @include m.font(25px, 500, v.$color_white);
     cursor: pointer;
+    transition: all 0.15s ease 0s;
     &:hover {
       background-color: color.adjust(v.$color_black, $alpha: -0.33); 
     }
