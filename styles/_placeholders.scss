@@ -19,3 +19,10 @@
     stroke: v.$color_black;
   }
 }
+
+%hover-white-icon {
+  &:hover {
+    cursor: pointer;
+    stroke: v.$color_white;
+  }
+}
